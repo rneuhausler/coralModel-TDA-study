@@ -25,9 +25,9 @@ coralModel is a stochastic spatiotemporal model representing the spatiotemporal 
 * Algal turf
 * Macroalgae
 
-As it is based on a temporal model developed by Mumby, Hastings, and Edwards (MHE), we refer to our spatial product as *s*MHE.
+As it is based on a temporal model developed by Mumby, Hastings, and Edwards (MHE), we also refer to our spatial product as *s*MHE.
 
-*s*MHE is written  with each agent being assigned one of the benthic coverage types listed above. 
+*s*MHE is written utilizing python's object-oriented capabilities, with each object being assigned one of the benthic coverage types listed above. 
 Over time, an agent's type updates stochastically through probabilities determined by:
 1. Overall reef conditions defined through input parameters, and
 2. The agent's immediate neighbors' types.
