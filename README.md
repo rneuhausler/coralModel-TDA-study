@@ -1,5 +1,8 @@
 # coralModel-TDA-study
 
+This repository contains the code and overview of running coralModel to recreate the outputs for (our paper). 
+Please see (zigzag)[https://github.com/rmcdomaths/zigzagcoralmodel] to compute the various TDA metrics on said outputs. 
+
 ## Acknowledgement
 
 This material is based upon work supported by the National Science Foundation under Grant No. DGE-1450053
@@ -12,7 +15,8 @@ For the purpose of drawing attention to specific parts of the python code throug
      .
 ```
 ---- 
-             
+
+
 ## Model Overview
 
 coralModel is a stochastic spatiotemporal model representing the spatiotemporal evolution of three competing coral reef benthic coverages:
