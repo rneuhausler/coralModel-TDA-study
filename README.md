@@ -7,6 +7,10 @@ Please see [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) to
 
 This material is based upon work supported by the National Science Foundation under Grant No. DGE-1450053
 
+## Authors:
+
+Rosanna Neuhausler and Maria Bruna
+
 ----
 ----
 For the purpose of drawing attention to specific parts of the python code throughout this introduction, I substitute non-focused on parts of the code with:
@@ -15,11 +19,10 @@ For the purpose of drawing attention to specific parts of the python code throug
      .
 ```
 ---- 
-
-
+             
 ## Model Overview
 
-coralModel is a stochastic spatiotemporal model representing the spatiotemporal evolution of three competing coral reef benthic coverages:
+coralModel is a stochastic spatiotemporal model representing the competition for space on coral reefs by three competing benthic species:
 
 * Coral
 * Algal turf
@@ -27,16 +30,18 @@ coralModel is a stochastic spatiotemporal model representing the spatiotemporal 
 
 As it is based on a temporal model developed by Mumby, Hastings, and Edwards (MHE), we also refer to our spatial product as *s*MHE.
 
-*s*MHE is written utilizing python's object-oriented capabilities, with each object being assigned one of the benthic coverage types listed above. 
-Over time, an agent's type updates stochastically through probabilities determined by:
-1. Overall reef conditions defined through input parameters, and
-2. The agent's immediate neighbors' types.
+sMHE is written utilizing python's object-oriented capabilities. We abstract the reef as locations in space, which we refer to as nodes, occupied by an organism belonging to one of the species listed above. As our model evolves temporally, competition between species may or maynot result in a change of occupant species at each node.
 
-Below is an example of an 15x15 agent reef's composition initially and after 100 runs (updates) 
+Updates are done stochastically through probabilities determined by:
+1. Overall reef conditions defined through parameters, and
+2. The neighborhood or each node.
+
+Below is an example of a 25x25 node reef initially and after 100 runs (updates) 
 (0=Coral, 1=Turf, 2=Macroalgae):
 
 
-![](images/exampleOutput/InitialFinal.png)
+![](images/spatial_evolution_images.png)
+
 
 
 ## Model Structure
