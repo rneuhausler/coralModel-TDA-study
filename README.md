@@ -205,7 +205,7 @@ The inclusion of the local fractional cover can be seen in the code below, showi
 ## Outputs
 
 The final outputs from a .sh run are the following metrics, shown in the example output below:
-![](images/exampleOutput/table.png)
+![](images/table.png)
 
 Coral-CoralNeighbors represents the average number of coral neighbors for a coral node (similarly holds for Turf-TurfNeighbors and Macro-MacroNeighbors).
 
