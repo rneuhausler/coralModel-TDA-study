@@ -37,7 +37,7 @@ Updates are done stochastically through probabilities determined by:
 2. The neighborhood or each node.
 
 Below is an example of a 25x25 node reef initially and after 100 runs (updates) 
-(0=Coral, 1=Turf, 2=Macroalgae):
+(Pink=Coral, Teal=Turf, Dark Green=Macroalgae):
 
 
 ![](images/spatial_evolution_images.png)
