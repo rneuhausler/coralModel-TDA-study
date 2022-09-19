@@ -1,7 +1,7 @@
 # coralModel-TDA-study
 
 This repository contains the code and overview of running coralModel to recreate the outputs for (our paper). 
-Please see [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) to compute the various TDA metrics on said outputs. 
+In order to run all of the shell files in the repository scripts from [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) need to be cloned, please refer to the bottom of this document for full instructions.
 
 ## Acknowledgement
 
@@ -271,7 +271,7 @@ jupyter notebook
 ```
 2. Within jupyter, open `modelOutputViewer.ipynb`
 
-## Running coralModel to generate outputs for recreating Zigzag analyses:
+## Running coralModel to generate outputs for recreating TDA analyses:
 
 In addition to steps 1-3 for running the model listed above:
 
@@ -282,7 +282,7 @@ cd ..
 
 2. Install [BATS.py](https://github.com/CompTop/BATS.py), following the steps outlined on their github repo.
 
-3. clone zigzagcoralmodel and move it's content into `/scripts` located in this repository.
+3. clone [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) and move it's content into `/scripts` located in this repository.
 ```
 git clone https://github.com/rmcdomaths/zigzagcoralmodel
 mv zigzagcoralmodel/* scripts
