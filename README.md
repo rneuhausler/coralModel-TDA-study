@@ -271,7 +271,7 @@ jupyter notebook
 ```
 2. Within jupyter, open `modelOutputViewer.ipynb`
 
-## Running coralModel to generate outputs for recreating TDA analyses:
+## Running coralModel.py to generate outputs for recreating TDA analyses:
 
 In addition to steps 1-3 for running the model listed above:
 
@@ -288,7 +288,7 @@ git clone https://github.com/rmcdomaths/zigzagcoralmodel
 mv zigzagcoralmodel/* scripts
 ```
 
-4. run shell files named after which figure they generate. e.g:
+4. run shell files named after the figure they generate. e.g:
 ```
 cd scripts
 generate_fig2_metrics.sh
