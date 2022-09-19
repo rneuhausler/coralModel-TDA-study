@@ -242,9 +242,9 @@ coral percent, macroalgae percent, inputs r, d, a, y, final time, record rate, a
 You can then visualize the output data using `modelOutputViewer.ipynb`. 
 
 
-## Running coralModelTest.py and Exploring Outputs
+## Running coralModel.py and Exploring Outputs
 
-To run the `coralModel_functions.py`, follow the following instructions:
+To run the `coralModel.py`, follow the following instructions:
 
 1. Make sure you have python 3.6 installed
 2. Open your terminal and `cd` to the location where you wish to store this repository
@@ -271,6 +271,27 @@ jupyter notebook
 ```
 2. Within jupyter, open `modelOutputViewer.ipynb`
 
+## Running coralModel to generate outputs for recreating Zigzag analyses:
+
+In addition to steps 1-3 for running the model listed above:
+
+1. Install [BATS.py](https://github.com/CompTop/BATS.py), following the steps outlined on their github repo.
+
+2. clone zigzagcoralmodel and move it's contents into the `\scripts` located in this repository.
+```
+git clone https://github.com/rmcdomaths/zigzagcoralmodel
+cd zigzagcoralmodel
+mv * zigzagcoralmodel ../scripts
+```
+3. run shell files named after which figure they generate. e.g:
+```
+generate_fig2_metrics.sh
+```
+4. Observe outputs in corresponding jupyter notebook.
+```
+jupyter notebook
+```
+Select `fig2.ipybn` to recreate the plots in our paper. Select `figure2_metric_examples.ipybn` to further explore the outputs.
 
 Enjoy!
 
