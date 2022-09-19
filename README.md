@@ -275,22 +275,30 @@ jupyter notebook
 
 In addition to steps 1-3 for running the model listed above:
 
-1. Install [BATS.py](https://github.com/CompTop/BATS.py), following the steps outlined on their github repo.
+1. Return to main folder
+```
+cd ..
+```
 
-2. clone zigzagcoralmodel and move it's contents into the `\scripts` located in this repository.
+2. Install [BATS.py](https://github.com/CompTop/BATS.py), following the steps outlined on their github repo.
+
+3. clone zigzagcoralmodel and move it's content into `/scripts` located in this repository.
 ```
 git clone https://github.com/rmcdomaths/zigzagcoralmodel
-cd zigzagcoralmodel
-mv * zigzagcoralmodel ../scripts
+mv zigzagcoralmodel/* scripts
 ```
-3. run shell files named after which figure they generate. e.g:
+
+4. run shell files named after which figure they generate. e.g:
 ```
+cd scripts
 generate_fig2_metrics.sh
 ```
-4. Observe outputs in corresponding jupyter notebook.
+
+5. Observe outputs in corresponding jupyter notebook.
 ```
 jupyter notebook
 ```
+
 Select `fig2.ipybn` to recreate the plots in our paper. Select `figure2_metric_examples.ipybn` to further explore the outputs.
 
 Enjoy!
