@@ -1,7 +1,7 @@
 # coralModel-TDA-study
 
 This repository contains the code and overview of running coralModel to recreate the outputs for (our paper). 
-In order to run all of the shell files in the repository scripts from [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) need to be cloned, please refer to the bottom of this document for full instructions. Alternatively, one can download the simulated data from figshare. Please refer to [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) for this approach.
+In order to run all of the shell files in the repository, [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) and [BATS.py](https://github.com/CompTop/BATS.py) need to be cloned. Please refer to the bottom of this document for full instructions. Alternatively, one can download the simulated data from figshare. Please refer to [zigzagcoralmodel](https://github.com/rmcdomaths/zigzagcoralmodel) for this latter approach.
 
 ## Acknowledgement
 
