@@ -299,7 +299,7 @@ generate_fig2_metrics.sh
 jupyter notebook
 ```
 
-Select `fig2.ipybn` to recreate the plots in our paper. Select `figure2_metric_examples.ipybn` to further explore the outputs.
+Select `fig2.ipynb` to recreate the plots in our paper. Select `figure2_metric_examples.ipynb` to further explore the outputs.
 
 Enjoy!
 
