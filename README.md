@@ -259,7 +259,7 @@ cd coralModel/scripts
 ```
 4. Run the model
 ```
-sh coralModel-grazingLoop.sh
+sh coralModel_example.sh
 ```
 Once the model is done running, you should see a folder titled `/output` in the `/scripts` folder. In here, you will find all the csv files (described above in Outputs and Metrics) organized into folders (mentioned above in Outputs). 
 
