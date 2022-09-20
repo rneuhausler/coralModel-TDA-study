@@ -1,40 +1,46 @@
-## Example of how to run coralModel looping through one parameter, in this case g
+## Example of how to run coralModel looping through one parameter, in this case the threshold parameter
 
-for VARIABLE in .2 .4 .6 .8
+for THRESHOLD in 1.45 15
 do
-
-# Inputs
-    nProcessors=4
-    NumberOfSimulations=100
+    ### Inputs
+    numberOfProcessors=4
+    numberOfSimulations=10
 
     coralPercent=33
-    algaePercent=33
-    gridOption=0 #array
+    macroalgaePercent=33
+    gridOption=2 #array
 
     #Time and Grid Settings
-    rows=15 
+    rows=15
     columns=15
-    threshold=1.45 
+    neighborhoodThreshold=$THRESHOLD
 
-    recordRate=200
+    recordRate=10
+    imageReturn=true #lowercase spelling true or false
+    imageRecordRate=1 ## after how many recordings do you want an image saved? 1 = each time the other recordings are taken
 
-#loop through g
+        
+    #loop through g, nested loop through gridoption (once ready)
     r=1.0
-    d=.4 
+    d=.4
     a=.2
-    g=$VARIABLE
+    g=.53 #array
     y=.75
-    dt=.1 
-    tf=501 #can play with this value as well
+    dt=.1
+    tf=10 #can play with this value as well
 
     blobValue=0
 
-## create directory
+    ## create directory
     grazingFolder=$(python -c "print(int($g*100))")
-    mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder
+    thresholdFolder=$(python -c "print(int($neighborhoodThreshold*100))")
 
-## run simulation
-    python coralModelTest.py $nProcessors $NumberOfSimulations $coralPercent $algaePercent $gridOption $rows $columns $threshold $recordRate $r $d $a $g $y $dt $tf $blobValue
+
+    mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'images'
+
+    ## run simulation
+    python coralModel_functions.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $imageRecordRate $r $d $a $g $y $dt $tf $blobValue
+
 done
 
 ## histograms - count, neighbors, npatches - nice to compare different initial grids
