@@ -1,3 +1,5 @@
+## Example of how to run coralModel looping through one parameter, in this case g
+
 for VARIABLE in .2 .4 .6 .8
 do
 
