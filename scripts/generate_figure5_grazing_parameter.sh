@@ -20,8 +20,6 @@ blobValue=0
 tf=101
 organism=0
 group=1
-denoise1=1
-denoise2=99
 isUnion=0
 isCoral=1
 
@@ -32,28 +30,27 @@ for g in ${gs[@]};
 do
                         
     # create directory
-    #grazingFolder=$(python -c "print((round(100*$g)))")
-    #thresholdFolder=$(python -c "print(int($neighborhoodThreshold*100))")
-    pwd
-    #mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder
+    grazingFolder=$(python -c "print((round(100*$g)))")
+    thresholdFolder=$(python -c "print(int($neighborhoodThreshold*100))")
+    mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder
 
-    #tims=$tf
+    tims=$tf
     # run simulation
-    #python coralModel_functions.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $imageRecordRate $r $d $a $g $y $dt $tf $blobValue
+    python coralModel_functions.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $imageRecordRate $r $d $a $g $y $dt $tf $blobValue
 	                    
     # create directory for bars
-    #mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/
+    mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/
 
     # generate bars
-    #python PL_grazing_print_barcodes.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $imageRecordRate $r $d $a $g $y $dt $tf $organism $group $denoise1 $denoise2 $isUnion $tims
+    python PL_grazing_print_barcodes.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $imageRecordRate $r $d $a $g $y $dt $tf $organism $group $isUnion $tims
 
     # convert to landscapes
-    #xargs <./'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/'c'$coralPercent'm'$macroalgaePercent'all_bars_list_hdim0.txt' -I filename ./gudhi.3.3.0/build/utilities/Persistence_representations/persistence_landscapes/create_landscapes -1 "filename"
+    xargs <./'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/'c'$coralPercent'm'$macroalgaePercent'all_bars_list_hdim0.txt' -I filename ./gudhi.3.3.0/build/utilities/Persistence_representations/persistence_landscapes/create_landscapes -1 "filename"
 
     # compute average landscape
-    #./gudhi.3.3.0/build/utilities/Persistence_representations/persistence_landscapes/average_landscapes $(cat ./'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/'c'$coralPercent'm'$macroalgaePercent'all_lands_list_hdim0.txt')
+    ./gudhi.3.3.0/build/utilities/Persistence_representations/persistence_landscapes/average_landscapes $(cat ./'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/'c'$coralPercent'm'$macroalgaePercent'all_lands_list_hdim0.txt')
 
-    #mv average.land ./'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/
+    mv average.land ./'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/
 
 done
 
@@ -78,13 +75,13 @@ do
     tims=101
 
     ## run simulation
-    #python coralModel_functions.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $imageRecordRate $r $d $a $g $y $dt $tf $blobValue $organism $group $denoise1 $denoise2
+    python coralModel_functions.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $imageRecordRate $r $d $a $g $y $dt $tf $blobValue $organism $group
 
     ## generate barcodes
     mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/'coral_success'
     mkdir -p 'output'/$rows'x'$columns/'grid'$gridOption/'grazing'$grazingFolder/'threshold'$thresholdFolder/'bars'/'macro_success'
 
-    python PL_prediction_print_barcodes.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $recordRate $r $d $a $g $y $dt $tf $organism $group $denoise1 $denoise2 $isUnion $tims
+    python PL_prediction_print_barcodes.py $numberOfProcessors $numberOfSimulations $coralPercent $macroalgaePercent $gridOption $rows $columns $neighborhoodThreshold $recordRate $imageReturn $recordRate $r $d $a $g $y $dt $tf $organism $group $isUnion $tims
 
     # For coral success
 

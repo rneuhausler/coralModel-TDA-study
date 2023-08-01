@@ -52,7 +52,6 @@ python coralModel_functions.py $numberOfProcessors $numberOfSimulations $coralPe
 numberOfProcessors=100
 numberOfSimulations=100
 g=.58
-
 # create directories
 grazingFolder=$(python -c "print(str(round($g * 100)))")
 thresholdFolder=$(python -c "print(int($neighborhoodThreshold*100))")
